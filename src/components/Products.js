@@ -1,4 +1,4 @@
-const Products = ({ products }) => {
+const Products = ({ products, addToCart }) => {
   return (
     <div className="products">
       <div className="grid products-grid">
@@ -13,7 +13,10 @@ const Products = ({ products }) => {
               {product.price && (
                 <p className="price bold txt-6">{product.price}€</p>
               )}
-              <button className="add-to-cart-button">
+              <button
+                className="add-to-cart-button"
+                onClick={(e) => addToCart(product.id)}
+              >
                 <span>Add to cart</span>
               </button>
             </div>
@@ -22,5 +25,4 @@ const Products = ({ products }) => {
     </div>
   );
 };
-
 export default Products;
